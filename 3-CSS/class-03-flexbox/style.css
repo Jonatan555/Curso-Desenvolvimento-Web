@@ -1,0 +1,42 @@
+.container {
+  border: 1px solid black;
+  /* padding: 8px; */
+  height: 80vh;
+}
+
+.square {
+  height: 80px;
+  width: 80px;
+  color: white;
+  padding: 8px;
+  font-size: 24px;
+}
+
+.square:nth-child(1) {
+  background: steelblue;
+}
+
+.square:nth-child(2) {
+  background: orange;
+  padding: 16px;
+}
+
+.square:nth-child(3) {
+  background: teal;
+  padding: 24px;
+}
+
+.square:nth-child(4) {
+  background: lightcoral;
+  padding: 24px;
+}
+
+.square:nth-child(5) {
+  background: purple;
+  padding: 24px;
+}
+
+.square:nth-child(6) {
+  background: slategray;
+  padding: 24px;
+}
