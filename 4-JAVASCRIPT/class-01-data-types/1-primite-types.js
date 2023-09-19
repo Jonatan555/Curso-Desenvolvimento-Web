@@ -25,6 +25,8 @@ console.log(10 > 20);
 console.log(10 < 20);
 console.log(10 != 20);
 
-let yourname = prompt("Digite seu nome");
 
+
+let yourname =prompt("bem vindo nome vamos fazer uma soma");
 console.log(yourname);
+ 
