@@ -6,7 +6,7 @@ console.log(myArray[2]());
 console.log(myArray.join("-"));
 
 const myName = "Jonatan",
-
+console.log(myName.slice(1, 5));
 console.log(myName.split("").reverse().join(""));
 
 const arrayTechs = ["HTML", "CSS", "GIT"];
