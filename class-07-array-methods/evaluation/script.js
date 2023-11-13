@@ -120,17 +120,27 @@ for (let i = arrayLiFO.length - 1; i >= 0; i--) {
     console.log(arrayLiFO[i]);
 }
 
-// Questão 6 (while):
-// Escreva os números de 0 a 500 sem os que pertencem à família do 200 e do 300:
+    // Questão 6 (while):
+    // Escreva os números de 0 a 500 sem os que pertencem à família do 200 e do 300:
 
 
-for (let i = 0; i<= 500; i++) {
-    // Verifica se o numero e um multiplo de 200 ou 300 
-    if (i >= 200 || i < 400) {
-        continue;  
+    // 200-299
+    // 300-399
+
+    //0-199
+    // 400-500
+
+    /*
+
+    let count = 0;
+    while(count <= 500){
+        if (count < 200 || count >= 400){
+            console.log(count)
+        }
+        count++
     }
-    console.log(i);
-} 
+
+
 
 // Questão 7 (se):
 // Crie uma lógica para verificar se o motorista foi multado
@@ -155,6 +165,9 @@ if (velocidade > 60) {
 
 const salary = [2000, 2800, 3000, 4000, 2200, 7500, 3650, 8000, 2000, 5000];
 
-const newSalary = salary.map();
-console.log();
+const newsalary = salary.map((salary) => salary * 1.1);
+console.log(newSalary);
+
+const sumNewSalary = newSalary.reduce((a, b) => a + b);
+console.log(sumNewSalary);
 
