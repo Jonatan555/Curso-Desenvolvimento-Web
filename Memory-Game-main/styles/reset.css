@@ -1,0 +1,49 @@
+:root {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-size: 1.6rem;
+  font-family: "Press Start 2P", cursive;
+  color: #eee;
+  border: none;
+  background: none;
+  text-shadow: 1px 1px 2px #000;
+}
+
+body {
+  background: url(../images/wallpaper-animes.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  height: 100vh;
+  background: #000b;
+  padding: 0 3.2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.backButton:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
