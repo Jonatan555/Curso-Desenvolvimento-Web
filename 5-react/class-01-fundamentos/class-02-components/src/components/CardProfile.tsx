@@ -1,13 +1,16 @@
- type CardProps = {
-    name: string;
-    age: number;
- }
+import "./style.css";
 
- export function CardProfile({ name, age }: CardProps) {
+type CardProps = {
+    name: string;
+    birth: string;
+    calcAge: (birth: string) => number;
+ };
+
+ export function CardProfile({ name, birth, calcAge }: CardProps) {
     return (
-        <>
+        <div className="container">
         <strong>{name}</strong>
-        <p>idade: {age}  </p>
-        </>
+        <p>idade: {calcAge(birth)}</p>
+        </div>
     );
  }
