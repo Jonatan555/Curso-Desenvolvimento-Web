@@ -1,7 +1,7 @@
  export const appTheme = {
     colors: {
         background: "#123",
-        text: "#e5e5e5",
-        backgroundButton: "orange",
+        text: "#000",
+        backgroundButton: "#e5e5e5",
     },
  };
