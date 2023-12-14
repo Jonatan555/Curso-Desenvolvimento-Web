@@ -6,6 +6,7 @@
   height: 100vh;
   background: ${({theme}) => theme.colors.backgroundpage };
   color: ${({ theme}) => theme.colors.text};
+  border: ${({ theme}) => theme.colors.backgroundButton};
   `;
 
   
