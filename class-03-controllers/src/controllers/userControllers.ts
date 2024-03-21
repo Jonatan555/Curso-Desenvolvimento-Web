@@ -1,38 +1,41 @@
-import  { Request, Response }  from "express";
+import { Request, Response, NextFunction } from "express";
 
 export const userControllers = {
-    create(req: Request, res: Response) {
-        const { id, name, age} = req.body;
+  async create(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { id, name, age } = req.body;
 
-        if (id && name && age) {
-            res.json({ status: `user ${id} created`});
-            return;
-        }
-        
-        res.status(400).json ({ status: `user not created!`
-    });
-    },
-    read(req: Request, res: Response) {
-        const { id } = req.params;
-        res.status(201).json({ user: id });
-       },
+      if (id && name && age) {
+        console.log();
+        return res.status(201).json({ status: `user ${id} created` });
+      }
 
-       update(req: Request, res: Response) {
-        const { id } = req.params;
-        const { name, age } = req.body;
+      throw res.status(400).json({ status: `user not created!` });
+    } catch (error) {
+      next(error);
+    }
+  },
 
-        if (id && name && age) {
-            console.log("updatesd", { id, name, age});
-            res.status(200).json({status: `user ${id} updated!`});
-            return;
-        }
+  read(req: Request, res: Response) {
+    const { id } = req.params;
+    res.status(201).json({ user: id });
+  },
 
-        res.json({status: "user not updated!"});
-       },
+  update(req: Request, res: Response) {
+    const { id } = req.params;
+    const { name, age } = req.body;
 
-       delete(req: Request, res: Response) {
-        const { id } = req.params;
-        res.status(200).json({status: `user ${id} deleted`
-    });
-       },
- };
+    if (id && name && age) {
+      console.log("updatesd", { id, name, age });
+      res.status(200).json({ status: `user ${id} updated!` });
+      return;
+    }
+
+    res.json({ status: "user not updated!" });
+  },
+
+  delete(req: Request, res: Response) {
+    const { id } = req.params;
+    res.status(200).json({ status: `user ${id} deleted` });
+  },
+};
