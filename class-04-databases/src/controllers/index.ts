@@ -1,19 +1,31 @@
-  import { Request, Response } from "express";
- 
- export const userControllers = {
-    create(req:  Request, res: Response) {
-        res.send({ message: "created!"});
-    },
+import { Request, Response, NextFunction } from "express";
+import { sqliteConnection } from "../databases/sqlite3";
 
-    read(req:  Request, res: Response) {
-        res.send({ message: "read!"});
-    },
+export const userControllers = {
+  async create(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { id, name, email, password } = req.body;
+      const db = await sqliteConnection();
 
-    update(req:  Request, res: Response) {
-        res.send({ message: "updated!"});
-    },
+      await db.run(
+        "INSERT INTO users (id, name, email, password) VALUES (?, ?, ?, ?)",
+        [id, name, email, password]
+      );
+      return res.send({ message: "user created!", id });
+    } catch (error) {
+      return next(error);
+    }
+  },
 
-    delete(req:  Request, res: Response) {
-        res.send({ message: "deleted!"});
-    },
- }
+  read(req: Request, res: Response) {
+    res.send({ message: "read!" });
+  },
+
+  update(req: Request, res: Response) {
+    res.send({ message: "updated!" });
+  },
+
+  delete(req: Request, res: Response) {
+    res.send({ message: "deleted!" });
+  },
+};
